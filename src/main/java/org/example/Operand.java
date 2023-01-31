@@ -6,7 +6,7 @@ enum OPERAND_TYPE {
 }
 
 enum ROMAN_NUMBER {
-    N, I, II, III, IV, V, VI, VII, VIII, IX, X,
+    N, I, II, III, IV, V, VI, VII, VIII, IX, X
 }
 
 class Operand {
