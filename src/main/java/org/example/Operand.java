@@ -5,6 +5,10 @@ enum OPERAND_TYPE {
     ROMAN
 }
 
+enum ROMAN_NUMBER {
+    N, I, II, III, IV, V, VI, VII, VIII, IX, X,
+}
+
 class Operand {
     int value;
     OPERAND_TYPE type;
@@ -25,12 +29,7 @@ class Operand {
 
     private int parseRoman(String input) throws Exception {
 
-        enum ROMAN_NUMBER {
-            NULL, I, II, III, IV, V, VI, VII, VIII, IX, X,
-            NONE
-        }
-
-        ROMAN_NUMBER number = ROMAN_NUMBER.NONE;
+        ROMAN_NUMBER number = ROMAN_NUMBER.N;
 
         boolean completionFlag = false;
 
@@ -46,7 +45,7 @@ class Operand {
             switch (ch) {
                 case 'I' -> {
                     switch (number) {
-                        case NONE -> number = ROMAN_NUMBER.I;
+                        case N -> number = ROMAN_NUMBER.I;
                         case I -> number = ROMAN_NUMBER.II;
                         case II -> {
                             number = ROMAN_NUMBER.III;
@@ -63,7 +62,7 @@ class Operand {
                 }
                 case 'V' -> {
                     switch (number) {
-                        case NONE -> number = ROMAN_NUMBER.V;
+                        case N -> number = ROMAN_NUMBER.V;
                         case I -> {
                             number = ROMAN_NUMBER.IV;
                             completionFlag = true;
@@ -73,7 +72,10 @@ class Operand {
                 }
                 case 'X' -> {
                     switch (number) {
-                        case NONE -> number = ROMAN_NUMBER.X;
+                        case N -> {
+                            number = ROMAN_NUMBER.X;
+                            completionFlag = true;
+                        }
                         case I -> {
                             number = ROMAN_NUMBER.IX;
                             completionFlag = true;
