@@ -12,19 +12,13 @@ public class Main {
         input = scanner.nextLine();
         scanner.close();
 
-        calc(input);
+        System.out.println("Calc result = " + calc(input));
     }
 
     public static String calc(String input) throws Exception {
-        String result;
+
         Expression expression = new Expression(input);
-
         System.out.println("Expression = " + expression);
-
-        result = expression.getResult();
-
-        System.out.println("Calc result = " + result);
-
-        return result;
+        return expression.getResult();
     }
 }
