@@ -1,4 +1,4 @@
-# Kata_Test_Calculator
+# Test task 'Calculator'
 Learner's test task
 
 Calculator gets from console input to numbers given either in Arabic or Roman notation.
